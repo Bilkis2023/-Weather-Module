@@ -1,0 +1,138 @@
+/* UTILITIES */
+
+body {
+	background: #d6d6d6;
+}
+
+a,
+a:hover,
+a:visited {
+	color: white;
+	text-decoration: none;
+}
+
+header {
+  background: linear-gradient(to left, #be8bf1 0%, #5aa2e9 100%);
+}
+
+header h1 {
+  margin: -30px;
+}
+
+.weather-container {
+	min-height: 85%;
+}
+
+/* MAIN CARD */
+
+#main-card {
+	/* background-color: #77756d; */
+  background-image: linear-gradient(160deg, #163555, #452764);
+	font-size: 125%;
+	transition: transform 0.2s;
+}
+
+#main-card:hover {
+	transform: scale(1.01);
+}
+
+#main-card-city {
+	font-weight: bold;
+  margin-bottom: 30px;
+}
+
+#main-card-date {
+  font-size: 20px;
+}
+
+#main-card-icon {
+	width: 300px;
+}
+
+#main-card p{
+  margin: 5px;
+}
+
+.main-left-content {
+  margin-top: 30px;
+}
+
+/* SEARCH CARD */
+.search-card {
+	background-color: blue;
+}
+
+.custom-button {
+  background-color: #163555;
+  border-color: #163555;
+}
+
+/* FORECAST CARDS */
+
+.forecast-card {
+	background-image: linear-gradient(160deg, #163555, #452764);
+	width: 250px;
+	opacity: 1;
+	transition: opacity 0.3s, transform 0.3s;
+}
+
+.forecast-card:hover {
+	opacity: 0.9;
+	transform: scale(1.03);
+}
+
+.forecast-card img {
+	margin: 0 auto;
+}
+
+.forecast-date {
+	text-align: center;
+	font-size: 150%;
+}
+
+.forecast-temp,
+.forecast-wind,
+.forecast-humidity {
+	margin-left: 15px;
+	text-align: center;
+	font-size: 125%;
+}
+
+/* UV INDEX */
+
+.favorable,
+.moderate,
+.severe {
+	font-weight: bold;
+	text-align: center;
+	width: 100px;
+	padding: 5px 10px;
+	border-radius: 8px;
+  display: none;
+}
+
+.favorable {
+	background-color: #299501;
+}
+
+.moderate {
+	background-color: #cea009;
+}
+
+.severe {
+	background: #bd0713;
+}
+
+footer {
+	text-align: center;
+	background-image: linear-gradient(to left, #452764 0%, #163555 100%);
+	justify-content: center;
+	padding: 12px;
+  color: white;
+}
+
+footer a:hover {
+  color: #926fb6;
+}
+
+   
