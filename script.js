@@ -1,5 +1,3 @@
-
-
 // DOM ELEMENTS
 
 // user input
@@ -25,7 +23,7 @@ const forecastCardHumidity = document.querySelectorAll('.forecast-humidity');
 
 // GLOBAL VARIABLES
 
-let weatherApiUrl = 'https://api.openweathermap.org';
+let weatherApiUrl = 'https://api.openweathermap.org'; 
 let weatherApiKey = '&appid=3dcebf80294bbadbeab3a3d24374fc77';
 let oneCallEndpoint = '/data/2.5/onecall?';
 let defaultSearch = [
@@ -38,7 +36,8 @@ let defaultSearch = [
 	'Grimsby',
 	'York',
 ];
-let today = moment().format('M/DD/YYYY');
+let today = moment().format('M/DD/YYYY [ , ] HH:mm:ss');
+
 
 // LOCAL STORAGE
 let searchHistory = JSON.parse(localStorage.getItem('searchHistory'));
