@@ -9,8 +9,8 @@
 # Description:
 <br>
 <br>
-For someone with IT skils, developing a weather forecast website could <br>
- great project to showcase abilities in web design and possibly incorporate <br>
+For someone with IT skils, developing a weather forecast website could be a <br>
+ great way to showcase abilities in web design and possibly incorporate <br>
  digital marketing strategies to atract users. It can offer various benefits <br>
   both for users and developers. Here are some key advantages:
   <br>
@@ -46,32 +46,27 @@ For someone with IT skils, developing a weather forecast website could <br>
 - When a user click on a city in the search history they are again presented with current and future conditions for that city
 <br>
 <br>
-## Mock-Up
-
-The following image shows the web application's appearance and functionality:
-
-![The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for London.](./assets/10-server-side-apis-challenge-demo.png)
-
-<br>
-<br>
-
 
 # Credits:
-https://bootcampspot.instructure.com/courses/5076
-https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/
-https://www.markdownguide.org/cheat-sheet
-https://fontawesome.com/search
-https://github.com/YueHuaHua
+https://bootcampspot.instructure.com/courses/5076<br>
+https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/<br>
+https://www.markdownguide.org/cheat-sheet<br>
+https://fontawesome.com/search<br>
+https://github.com/YueHuaHua<br>
 https://openai.com/
 <br>
 <br>
 # Technologies Used:
+<br>
+<br>
+
 - HTML5
  <br> 
 - CSS3
  <br>
 - JAVASCRIPT
 <br>
+- JSON
  <br>
 <br>
 ## Licens:
