@@ -16,11 +16,17 @@ For someone with IT skils, developing a weather forecast website could be a <br>
   <br>
    <br>
 - Information Access
+<br>
 - Users Engagement
+<br>
 - Targeted Advertising
+<br>
 - Integration with Other Services
+<br>
 - Educational Tool
+<br>
 - Community Engagement
+<br>
 - Emergency Perparedness etc.
 <br>
 <br>
