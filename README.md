@@ -1,40 +1,59 @@
 ## Title:<br>
 <br>
 
-# Sarver APIs: Weather Forecast
+# Weather Forecast
 <br>
 <br>
 
 
 # Description:
+<br>
+<br>
+For someone with IT skils, developing a weather forecast website could <br>
+ great project to showcase abilities in web design and possibly incorporate <br>
+ digital marketing strategies to atract users. It can offer various benefits <br>
+  both for users and developers. Here are some key advantages:
+  <br>
+   <br>
+- Information Access
+- Users Engagement
+- Targeted Advertising
+- Integration with Other Services
+- Educational Tool
+- Community Engagement
+- Emergency Perparedness etc.
+<br>
+<br>
 
 # Image:
 ![The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for London.](Image/Screenshot-1.jpg)
 
 # Acceptance Criteria:
-* Create a weather dashboard with form inputs.
-  * When a user searches for a city they are presented with current and future conditions for that city and that city is added to the search history
-  * When a user views the current weather conditions for that city they are presented with:
-    * The city name
-    * The date
-    * An icon representation of weather conditions
-    * The temperature
-    * The humidity
-    * The wind speed
-  * When a user view future weather conditions for that city they are presented with a 5-day forecast that displays:
-    * The date
-    * An icon representation of weather conditions
-    * The temperature
-    * The humidity
-  * When a user click on a city in the search history they are again presented with current and future conditions for that city
-
+- Create a weather dashboard with form inputs.
+- When a user searches for a city they are presented with current and future conditions for that city and that city is added to the search history
+- When a user views the current weather conditions for that city they are presented with:
+    - The city name
+    - The date
+    - An icon representation of weather conditions
+    - The temperature
+    - The humidity
+    - The wind speed
+- When a user view future weather conditions for that city they are presented with a 5-day forecast that displays:
+    - The date
+    - An icon representation of weather conditions
+    - The temperature
+    - The humidity
+- When a user click on a city in the search history they are again presented with current and future conditions for that city
+<br>
+<br>
 ## Mock-Up
 
 The following image shows the web application's appearance and functionality:
 
 ![The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for London.](./assets/10-server-side-apis-challenge-demo.png)
 
-
+<br>
+<br>
 
 
 # Credits:
@@ -43,12 +62,18 @@ https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/
 https://www.markdownguide.org/cheat-sheet
 https://fontawesome.com/search
 https://github.com/YueHuaHua
-
+https://openai.com/
+<br>
+<br>
 # Technologies Used:
-HTML5
-CSS3
-JAVASCRIPT
-
+- HTML5
+ <br> 
+- CSS3
+ <br>
+- JAVASCRIPT
+<br>
+ <br>
+<br>
 ## Licens:
 
 -👉 This project is licensed under the MIT License.
