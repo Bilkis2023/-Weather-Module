@@ -1,3 +1,64 @@
+.body {
+	background: #f0cfcf;
+}
+
+a,
+a:hover,
+a:visited {
+	color: white;
+	text-decoration: none;
+}
+#search-form{
+	background: rgb(236, 162, 25);
+	color:rgb(244, 246, 248);
+	height: 70px;
+	width: 100px;
+	
+}
+
+
+
+
+
+header {
+	background: linear-gradient(to left, #be8bf1 0%, #62a2e2 100%);
+  }
+
+
+
+
+.card-body{
+	background: linear-gradient(160deg, #163555, #452764);
+	font-size: 125%;
+	transition: transform 0.2s;
+	color:rgb(244, 246, 248);
+
+}
+
+.style{
+    height: 300px;
+	
+}
+
+#main-card {
+	height: 250px;
+	width: 1200px;
+  background: linear-gradient(160deg, #386fa5, #d0b0f0);
+	font-size: 125%;
+	transition: transform 0.2s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* UTILITIES */
 
 body {
@@ -26,7 +87,7 @@ header h1 {
 /* MAIN CARD */
 
 #main-card {
-	/* background-color: #77756d; */
+	background-color: #5f5e59;
   background-image: linear-gradient(160deg, #163555, #452764);
 	font-size: 125%;
 	transition: transform 0.2s;
