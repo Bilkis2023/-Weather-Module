@@ -73,7 +73,7 @@ function weatherSearch(location) {
             console.log(data)
             displayCurrent(data.list[0], city)
             var forecastarray=[data.list[8],data.list[16],data.list[24],data.list[32],data.list[39]]
-            displayForecast(forecastarray)
+            displayForecast(forecastarray,city)
             // console.log("Temp: ", data.main.temp)
             //     console.log("Humidity ", data.main.humidity)
             //     console.log("Pressure ", data.main.pressure)
@@ -138,7 +138,7 @@ function displayCurrent(current, city) {
 
 
 //solving for 5 days -- display the title for 5-day Forecast, then process the array of days
-function displayForecast(forecast) {
+function displayForecast(forecast,city) {
     console.log(forecast);
 
     forecastContainer.textContent = '5-day Forecast'
@@ -201,6 +201,8 @@ function displayForecast(forecast) {
             //combine data w/card - build
             cardBody.append(cardTitle, cardTextTemp, cardTextHumidity, cardTextWind)
             forecastContainer.append(card)
+
+
         
         
         
