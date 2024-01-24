@@ -26,21 +26,27 @@ var historyBtn= []
 searchBtn.addEventListener("click",searchCity)
 
 function searchCity(e) {
+    try{
     e.preventDefault()
     var search =searchInput.val().trim()
     console.log(search)
     geoSearch(search)
+    } catch(err) {
+        console.log(err)
+    }
 }
+
+
 function geoSearch(search){
     console.log(search)
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=${weatherApiKey}` )
+    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=5&appid=${weatherApiKey}` )
     .then(function (response) {
     	return response.json();
 })
 .then(function (data) {
 	console.log(data)
  
- var lon= data[0].lon
+ var lon= data[0].lon  
  
  var lat= data[0].lat
  console.log(lat,lon)
