@@ -43,13 +43,14 @@ a:visited {
   .column {
 	float: left;
 	width: 25%;
-	padding: 0 10px;
+	padding: 20px 10px;
   }
   
   /* Remove extra left and right margins, due to padding in columns */
-  .row {margin: 0 0px;
+  .row {margin: 50 0px;
     height: 400px;
 	width: 700px;
+	flex-wrap: nowrap;
 }
   
   /* Clear floats after the columns */
