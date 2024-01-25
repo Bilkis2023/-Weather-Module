@@ -110,7 +110,7 @@ function displayCurrent(current, city) {
 
 
     //set classes to the elements
-    card.setAttribute("class", 'card')
+    card.setAttribute("class", 'card card-current')
     cardBody.setAttribute('class', 'card-body')
     card.append(cardBody)
 
@@ -177,7 +177,7 @@ function displayForecast(forecast,city) {
         
         
             //set classes to the elements
-            card.setAttribute("class", 'card')
+            card.setAttribute("class", 'card column')
             cardBody.setAttribute('class', 'card-body')
             card.append(cardBody)
         

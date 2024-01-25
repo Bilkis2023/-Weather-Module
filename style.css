@@ -3,9 +3,9 @@
 }
 
 #main-card {
-	height: 250px;
+	height: 100px;
 	width: 1000px;
-	margin: 50px;
+	margin: 30px;
 
 }
 
@@ -23,13 +23,12 @@ a:visited {
 	
 }
 .card-body{
-	background: linear-gradient(160deg, #163555, #452764);
+	background: linear-gradient(160deg, #2163a5, #511b88);
 	font-size: 125%;
 	transition: transform 0.2s;
 	color:rgb(244, 246, 248);
 
 }
-
 
 * {
 	box-sizing: border-box;
@@ -44,11 +43,19 @@ a:visited {
 	float: left;
 	width: 25%;
 	padding: 20px 10px;
+	margin: 10px;
+  }
+  .card-current{
+	float: left;
+	width: 100%;
+	padding: 20px 10px;
+	margin: 30px;
+	margin-left: 400px;
   }
   
   /* Remove extra left and right margins, due to padding in columns */
   .row {margin: 50 0px;
-    height: 400px;
+    height: 500px;
 	width: 700px;
 	flex-wrap: nowrap;
 }
@@ -91,7 +98,8 @@ a:visited {
 
 
 
-/* UTILITIES */
+
+/* UTILITIES
 
 body {
 	background: #d6d6d6;
@@ -228,4 +236,4 @@ footer a:hover {
   color: #926fb6;
 }
 
-   
+    
