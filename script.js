@@ -1,4 +1,4 @@
-// let weatherApiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${weatherApiKey}`; 
+ // let weatherApiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${weatherApiKey}`; 
 // var geoapi=`http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=${weatherApiKey}`
 let weatherApiKey = '08c3565d78414f9134bafaeed4808aa7';
 https://api.openweathermap.org/data/2.5/forecast?q=London,uk&APPID=08c3565d78414f9134bafaeed4808aa7
@@ -52,7 +52,7 @@ function geoSearch(search) {
             console.log(data)
 
             weatherSearch(data[0])
-        })
+        }) 
 }
 
 // _________________________________________________
@@ -72,7 +72,7 @@ function weatherSearch(location) {
         .then(function (data) {
             console.log(data)
             displayCurrent(data.list[0], city)
-            var forecastarray=[data.list[8],data.list[16],data.list[24],data.list[32],data.list[39]]
+            var forecastarray=[data.list[7],data.list[14],data.list[21],data.list[28],data.list[35]]
             displayForecast(forecastarray,city)
             // console.log("Temp: ", data.main.temp)
             //     console.log("Humidity ", data.main.humidity)

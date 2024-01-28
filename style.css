@@ -4,8 +4,8 @@
 
 #main-card {
 	height: 100px;
-	width: 1000px;
-	margin: 30px;
+	width: 1500px;
+	margin: 50px;
 
 }
 
@@ -24,7 +24,7 @@ a:visited {
 }
 .card-body{
 	background: linear-gradient(160deg, #2163a5, #511b88);
-	font-size: 125%;
+	font-size: 100%;
 	transition: transform 0.2s;
 	color:rgb(244, 246, 248);
 
@@ -32,6 +32,7 @@ a:visited {
 
 * {
 	box-sizing: border-box;
+	
   }
   
   body {
@@ -49,14 +50,14 @@ a:visited {
 	float: left;
 	width: 100%;
 	padding: 20px 10px;
-	margin: 30px;
-	margin-left: 400px;
+	margin: 100px;
+	margin-left: 300px;
   }
   
   /* Remove extra left and right margins, due to padding in columns */
-  .row {margin: 50 0px;
-    height: 500px;
-	width: 700px;
+  .row {margin: 0 0px;
+    height: 320px;
+	width: 900px;
 	flex-wrap: nowrap;
 }
   

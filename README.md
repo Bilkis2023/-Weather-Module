@@ -59,7 +59,6 @@ https://bootcampspot.instructure.com/courses/5076<br>
 https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/<br>
 https://www.markdownguide.org/cheat-sheet<br>
 https://fontawesome.com/search<br>
-https://github.com/YueHuaHua<br>
 https://openai.com/
 <br>
 <br>
