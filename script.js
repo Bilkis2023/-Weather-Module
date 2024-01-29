@@ -1,4 +1,4 @@
- // let weatherApiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${weatherApiKey}`; 
+// let weatherApiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${weatherApiKey}`; 
 // var geoapi=`http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=${weatherApiKey}`
 let weatherApiKey = '08c3565d78414f9134bafaeed4808aa7';
 https://api.openweathermap.org/data/2.5/forecast?q=London,uk&APPID=08c3565d78414f9134bafaeed4808aa7
@@ -17,6 +17,7 @@ https://api.openweathermap.org/data/2.5/forecast?q=London,uk&APPID=08c3565d78414
 
 var searchForm = document.getElementById("search-form")
 var searchInput = $("#search-input")
+var cityName = document.getElementById("cityname" )
 var searchBtn = document.getElementById("search-button")
 var historyContainer = document.getElementById("history")
 var todayContainer = document.getElementById("today")
@@ -26,8 +27,8 @@ var historyBtn = []
 // let today = moment().format('M/DD/YYYY [ , ] HH:mm:ss');
 
 // local storage
-
-let searchHistory = JSON.parse(localStorage.getItem('searceHistory'));
+ localStorage.setItem("searchHistory", 'cityName');
+var searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
 
 searchBtn.addEventListener("click", searchCity)
 //taking input for the city and validating
@@ -58,7 +59,7 @@ function geoSearch(search) {
             console.log(data)
 
             weatherSearch(data[0])
-        }) 
+        })
 }
 
 // _________________________________________________
@@ -78,8 +79,8 @@ function weatherSearch(location) {
         .then(function (data) {
             console.log(data)
             displayCurrent(data.list[0], city)
-            var forecastarray=[data.list[7],data.list[14],data.list[21],data.list[28],data.list[35]]
-            displayForecast(forecastarray,city)
+            var forecastarray = [data.list[7], data.list[14], data.list[21], data.list[28], data.list[35]]
+            displayForecast(forecastarray, city)
             // console.log("Temp: ", data.main.temp)
             // console.log("feels_like", data.main.feels_like)
             //     console.log("Humidity ", data.main.humidity)
@@ -93,7 +94,7 @@ function weatherSearch(location) {
 
 
 function displayCurrent(current, city) {
-    console.log("current",current);
+    console.log("current", current);
     // Set the values as a variable
     var temp = current.main.temp
     var feels_like = current.main.feels_like
@@ -131,7 +132,7 @@ function displayCurrent(current, city) {
 
     cardTitle.setAttribute('class', 'card-title')
     cardTextTemp.setAttribute('class', 'card-text')
-    cardTextFeelsLike.setAttribute('class','feels_like')
+    cardTextFeelsLike.setAttribute('class', 'feels_like')
     cardTextHumidity.setAttribute('class', 'card-text')
     cardTextWind.setAttribute('class', 'card-text')
 
@@ -157,78 +158,78 @@ function displayCurrent(current, city) {
 
 
 //solving for 5 days -- display the title for 5-day Forecast, then process the array of days
-function displayForecast(forecast,city) {
+function displayForecast(forecast, city) {
     console.log(forecast);
 
     forecastContainer.textContent = '5-day Forecast'
     forecastContainer.innerHTML = ""
-//loop thru the array of forecast (data.list), create a card for each day.  Solve for 5 days
+    //loop thru the array of forecast (data.list), create a card for each day.  Solve for 5 days
     for (let i = 0; i < forecast.length; i++) {
         const current = forecast[i];
         console.log(current);
 
-       
-            console.log(current);
-            // Set the values as a variable
-            var temp = current.main.temp
-            var feels_like = current.main.feels_like
-            var humidity = current.main.humidity
-            var wind = current.wind.speed
-            // var icon = current.weather[0].icon
-            var iconDescription = current.weather[0].main
-            var iconUrl = `https:openweathermap.org/img/w/${current.weather[0].icon}.png`
-            // var cpressure = data.main.pressure
-            var date = current.dt_txt
-        
-            //     // Select the main card text element by id
-            //     // We will set the id 'main-card-text' in index.html
-            //     var mainCardText = document.getElementById('main-card-text')
-            //     // We will then use text content to set the current temp
-            //     mainCardText.textContent= `Current temp: ${currentTemp}`
-        
-            //creating the card elements
-            var card = document.createElement('div')
-            var cardBody = document.createElement('div')
-            var cardTitle = document.createElement('h5')
-            var cardTextTemp = document.createElement('p')
-            var cardTextFeelslike = document.createElement('p')
-            var cardTextHumidity = document.createElement('p')
-            var cardTextWind = document.createElement('p')
-            var iconImg = document.createElement('img')
-        
-        
-            //set classes to the elements
-            card.setAttribute("class", 'card column')
-            cardBody.setAttribute('class', 'card-body')
-            card.append(cardBody)
-        
-            cardTitle.setAttribute('class', 'card-title')
-            cardTextTemp.setAttribute('class', 'card-text')
-            cardTextFeelslike.setAttribute('class','feels_like')
-            cardTextHumidity.setAttribute('class', 'card-text')
-            cardTextWind.setAttribute('class', 'card-text')
-        
-            iconImg.setAttribute('class', 'weather-img')
-            iconImg.setAttribute('src', iconUrl)
-            iconImg.setAttribute('alt', iconDescription)
-        
-            //start adding data and img to card
-            cardTitle.textContent = `${city} (${date})`;
-            cardTitle.append(iconImg)
-        
-            cardTextTemp.textContent = `Temp:  ${temp}\u00B0C `
-            cardTextFeelslike.textContent = `Feels_like: ${feels_like}`
-            cardTextHumidity.textContent = `Humidity:  ${humidity}`
-            cardTextWind.textContent = `Wind:  ${wind}`
-        
-            //combine data w/card - build
-            cardBody.append(cardTitle, cardTextTemp, cardTextFeelslike, cardTextHumidity, cardTextWind)
-            forecastContainer.append(card)
+
+        console.log(current);
+        // Set the values as a variable
+        var temp = current.main.temp
+        var feels_like = current.main.feels_like
+        var humidity = current.main.humidity
+        var wind = current.wind.speed
+        // var icon = current.weather[0].icon
+        var iconDescription = current.weather[0].main
+        var iconUrl = `https:openweathermap.org/img/w/${current.weather[0].icon}.png`
+        // var cpressure = data.main.pressure
+        var date = current.dt_txt
+
+        //     // Select the main card text element by id
+        //     // We will set the id 'main-card-text' in index.html
+        //     var mainCardText = document.getElementById('main-card-text')
+        //     // We will then use text content to set the current temp
+        //     mainCardText.textContent= `Current temp: ${currentTemp}`
+
+        //creating the card elements
+        var card = document.createElement('div')
+        var cardBody = document.createElement('div')
+        var cardTitle = document.createElement('h5')
+        var cardTextTemp = document.createElement('p')
+        var cardTextFeelslike = document.createElement('p')
+        var cardTextHumidity = document.createElement('p')
+        var cardTextWind = document.createElement('p')
+        var iconImg = document.createElement('img')
 
 
-        
-        
-        
+        //set classes to the elements
+        card.setAttribute("class", 'card column')
+        cardBody.setAttribute('class', 'card-body')
+        card.append(cardBody)
+
+        cardTitle.setAttribute('class', 'card-title')
+        cardTextTemp.setAttribute('class', 'card-text')
+        cardTextFeelslike.setAttribute('class', 'feels_like')
+        cardTextHumidity.setAttribute('class', 'card-text')
+        cardTextWind.setAttribute('class', 'card-text')
+
+        iconImg.setAttribute('class', 'weather-img')
+        iconImg.setAttribute('src', iconUrl)
+        iconImg.setAttribute('alt', iconDescription)
+
+        //start adding data and img to card
+        cardTitle.textContent = `${city} (${date})`;
+        cardTitle.append(iconImg)
+
+        cardTextTemp.textContent = `Temp:  ${temp}\u00B0C `
+        cardTextFeelslike.textContent = `Feels_like: ${feels_like}`
+        cardTextHumidity.textContent = `Humidity:  ${humidity}`
+        cardTextWind.textContent = `Wind:  ${wind}`
+
+        //combine data w/card - build
+        cardBody.append(cardTitle, cardTextTemp, cardTextFeelslike, cardTextHumidity, cardTextWind)
+        forecastContainer.append(card)
+
+
+
+
+
 
 
 
@@ -244,5 +245,5 @@ function displayForecast(forecast,city) {
 
 
 
-    
+
 }
