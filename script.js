@@ -31,32 +31,36 @@ let newItem = document.createElement("li");
 // let today = moment().format('M/DD/YYYY [ , ] HH:mm:ss');
 
 
+function getHistory(){
 
-var searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
-historyBtn = ['London', 'Birmingham', 'New York', 'Miami', 'Atlanta', 'Los Angeles']
+   var historyBtn = ['London', 'Birmingham', 'New York', 'Miami', 'Atlanta', 'Los Angeles','Dhaka',]
 // historyBtn.push(search)
-localStorage.setItem("searchHistory", 'historyBtn');
+localStorage.setItem("searchHistory", JSON.stringify(historyBtn) );
+var searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
 
 
 newItem.innerText = historyBtn[0]
 
-for (let i = 0; i < historyBtn.length; i++) {
+for (let i = 0; i <searchHistory.length; i++) {
     let newItem = document.createElement("li");
-    newItem.innerText = historyBtn[i];
+    newItem.innerText = searchHistory[i];
     newList.append(newItem);
 }
 
  historyContainer.append(newList);
 
-
-
+}
+getHistory()
 searchBtn.addEventListener("click", searchCity)
 //taking input for the city and validating
 function searchCity(e) {
     try {
         e.preventDefault()
         var search = searchInput.val().trim()
-        console.log(search)
+        var searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
+        searchHistory.push("Dhaka", "Manchester")
+        localStorage.setItem("searchHistory", JSON.stringify(historyBtn) );
+          console.log(search)
         geoSearch(search)
     } catch (error) {
         console.log(error)
@@ -152,7 +156,7 @@ function displayCurrent(current, city) {
 
     cardTitle.setAttribute('class', 'card-title')
     cardTextTemp.setAttribute('class', 'card-text')
-    cardTextFeelsLike.setAttribute('class', 'feels_like')
+    cardTextFeelsLike.setAttribute('class', 'card-text')
     cardTextHumidity.setAttribute('class', 'card-text')
     cardTextWind.setAttribute('class', 'card-text')
 
