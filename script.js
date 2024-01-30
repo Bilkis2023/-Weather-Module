@@ -23,9 +23,9 @@ var historyContainer = document.getElementById("history")
 var todayContainer = document.getElementById("today")
 var forecastContainer = document.getElementById("forecast")
 var historyBtn = []
-let newList = document.createElement("ul");
-let newItem = document.createElement("li");
-let searchHistory = [];
+// let newList = document.createElement("ul");
+// let newItem = document.createElement("li");
+let searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
 
 
 let date = dayjs().format('D/M/YYYY');
@@ -46,27 +46,29 @@ function saveSearchHistory(newSearch) {
 }
 
 
-function  displayHistory(){
-    historyContainer.innerHTML = ''  
+function displayHistory() {
+    let newList = document.createElement("ul");
+    // let newItem = document.createElement("li");
+    historyContainer.innerHTML = ''
     for (let i = 0; i < searchHistory.length; i++) {
         let newItem = document.createElement("li");
         newItem.innerText = searchHistory[i];
         newList.append(newItem);
-    
+
         // add a click event listener to each history item
         newItem.addEventListener('click', function () {
             searchCity(null, searchHistory[i]);
         });
     }
-    
+
     historyContainer.append(newList);
-     
+
 
 }
 
-function getHistory(){
+function getHistory() {
     var storedHistory = localStorage.getItem("searchHistory")
-    if (storedHistory){
+    if (storedHistory) {
         searchHistory = JSON.parse(storedHistory)
 
     }
@@ -278,3 +280,8 @@ function displayForecast(forecast, city) {
 
 
 }
+
+historyContainer.addEventListener("click",function);
+
+
+displayHistory()

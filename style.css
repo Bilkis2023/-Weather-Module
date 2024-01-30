@@ -4,7 +4,7 @@
 
 #main-card {
 	height: 100px;
-	width: 1500px;
+	width: 1000px;
 	margin: 50px;
 
 }
@@ -85,11 +85,28 @@ a:visited {
 	}
   }
 
+/* Will have added some CSS. */
+  .forecast-card:hover {
+	opacity: 0.9;
+	transform: scale(1.03);
+}
 
+.forecast-card img {
+	margin: 0 auto;
+}
 
+.forecast-date {
+	text-align: center;
+	font-size: 100%;
+}
 
-
-
+.forecast-temp,
+.forecast-wind,
+.forecast-humidity {
+	margin-left: 15px;
+	text-align: center;
+	font-size: 125%;
+}
 
 
 
