@@ -31,37 +31,48 @@ let newItem = document.createElement("li");
 // let today = moment().format('M/DD/YYYY [ , ] HH:mm:ss');
 
 
-function getHistory(){
 
-   var historyBtn = ['London', 'Birmingham', 'New York', 'Miami', 'Atlanta', 'Los Angeles','Dhaka',]
-// historyBtn.push(search)
-localStorage.setItem("searchHistory", JSON.stringify(historyBtn) );
 var searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
+var historyBtn = ['London', 'Birmingham', 'New York', 'Miami', 'Atlanta', 'Los Angeles', 'Dhaka',]
+//  historyBtn.push(search)
+//  localStorage.setItem("searchHistory",'historyBtn');
+function saveSearchHistory(newSearch) {
+    // save to localstorage
+    historyBtn.push(newSearch);
+
+    window.localStorage.setItem("searchHistory", JSON.stringify(historyBtn));
+}
+
+
+
 
 
 newItem.innerText = historyBtn[0]
 
-for (let i = 0; i <searchHistory.length; i++) {
+for (let i = 0; i < searchHistory.length; i++) {
     let newItem = document.createElement("li");
-    newItem.innerText = searchHistory[i];
+    newItem.innerText = historyBtn[i];
     newList.append(newItem);
+
+    // add a click event listener to each history item
+    newItem.addEventListener('click', function () {
+        searchCity(null, historyBtn[i]);
+    });
 }
 
- historyContainer.append(newList);
+historyContainer.append(newList);
 
-}
-getHistory()
+
+
 searchBtn.addEventListener("click", searchCity)
 //taking input for the city and validating
-function searchCity(e) {
+function searchCity(e, cityName = null) {
     try {
-        e.preventDefault()
-        var search = searchInput.val().trim()
-        var searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
-        searchHistory.push("Dhaka", "Manchester")
-        localStorage.setItem("searchHistory", JSON.stringify(historyBtn) );
-          console.log(search)
+        if (e) e.preventDefault()
+        var search = cityName ? cityName : searchInput.val().trim()
+        console.log(search)
         geoSearch(search)
+        if (!cityName) saveSearchHistory(search);
     } catch (error) {
         console.log(error)
     }
