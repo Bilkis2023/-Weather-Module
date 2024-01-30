@@ -17,18 +17,38 @@ https://api.openweathermap.org/data/2.5/forecast?q=London,uk&APPID=08c3565d78414
 
 var searchForm = document.getElementById("search-form")
 var searchInput = $("#search-input")
-var cityName = document.getElementById("cityname" )
+var cityName = document.getElementById("cityname")
 var searchBtn = document.getElementById("search-button")
 var historyContainer = document.getElementById("history")
 var todayContainer = document.getElementById("today")
 var forecastContainer = document.getElementById("forecast")
 var historyBtn = []
+let newList = document.createElement("ul");
+let newItem = document.createElement("li");
+
+
 
 // let today = moment().format('M/DD/YYYY [ , ] HH:mm:ss');
 
-// local storage
- localStorage.setItem("searchHistory", 'cityName');
+
+
 var searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
+historyBtn = ['London', 'Birmingham', 'New York', 'Miami', 'Atlanta', 'Los Angeles']
+// historyBtn.push(search)
+localStorage.setItem("searchHistory", 'historyBtn');
+
+
+newItem.innerText = historyBtn[0]
+
+for (let i = 0; i < historyBtn.length; i++) {
+    let newItem = document.createElement("li");
+    newItem.innerText = historyBtn[i];
+    newList.append(newItem);
+}
+
+ historyContainer.append(newList);
+
+
 
 searchBtn.addEventListener("click", searchCity)
 //taking input for the city and validating
@@ -38,8 +58,8 @@ function searchCity(e) {
         var search = searchInput.val().trim()
         console.log(search)
         geoSearch(search)
-    } catch (err) {
-        console.log(err)
+    } catch (error) {
+        console.log(error)
     }
 }
 // ______________________

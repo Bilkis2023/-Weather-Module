@@ -1,4 +1,4 @@
-// DOM ELEMENTS
+ // DOM ELEMENTS
 
 // user input
 const searchedButtons = document.querySelector('#search-buttons');
