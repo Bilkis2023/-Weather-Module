@@ -32,15 +32,16 @@ let newItem = document.createElement("li");
 
 
 
-var searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
-var historyBtn = ['London', 'Birmingham', 'New York', 'Miami', 'Atlanta', 'Los Angeles', 'Dhaka',]
+var searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
+var historyBtn = []
 //  historyBtn.push(search)
 //  localStorage.setItem("searchHistory",'historyBtn');
-function saveSearchHistory(newSearch) {
+function saveSearchHistory(newSearch) { 
+    searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
     // save to localstorage
-    historyBtn.push(newSearch);
+    searchHistory.push(newSearch);
 
-    window.localStorage.setItem("searchHistory", JSON.stringify(historyBtn));
+    window.localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
 }
 
 
@@ -48,15 +49,15 @@ function saveSearchHistory(newSearch) {
 
 
 newItem.innerText = historyBtn[0]
-
+console.log (searchHistory)
 for (let i = 0; i < searchHistory.length; i++) {
     let newItem = document.createElement("li");
-    newItem.innerText = historyBtn[i];
+    newItem.innerText = searchHistory[i];
     newList.append(newItem);
 
     // add a click event listener to each history item
     newItem.addEventListener('click', function () {
-        searchCity(null, historyBtn[i]);
+        searchCity(null,searchHistory[i]);
     });
 }
 
@@ -77,7 +78,6 @@ function searchCity(e, cityName = null) {
         console.log(error)
     }
 }
-// ______________________
 function geoSearch(search) {
     console.log(search)
     fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=5&appid=${weatherApiKey}`)
@@ -97,7 +97,6 @@ function geoSearch(search) {
         })
 }
 
-// _________________________________________________
 function weatherSearch(location) {
     console.log(location)
     var { lat, lon } = location;
