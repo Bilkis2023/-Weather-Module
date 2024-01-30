@@ -25,43 +25,55 @@ var forecastContainer = document.getElementById("forecast")
 var historyBtn = []
 let newList = document.createElement("ul");
 let newItem = document.createElement("li");
+let searchHistory = [];
+
+
+let date = dayjs().format('D/M/YYYY');
 
 
 
-// let today = moment().format('M/DD/YYYY [ , ] HH:mm:ss');
-
-
-
-var searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
-var historyBtn = []
+// var searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
+// var historyBtn = []
 //  historyBtn.push(search)
 //  localStorage.setItem("searchHistory",'historyBtn');
-function saveSearchHistory(newSearch) { 
-    searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
+function saveSearchHistory(newSearch) {
+    // searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
     // save to localstorage
     searchHistory.push(newSearch);
 
     window.localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+    displayHistory()
 }
 
 
+function  displayHistory(){
+    historyContainer.innerHTML = ''  
+    for (let i = 0; i < searchHistory.length; i++) {
+        let newItem = document.createElement("li");
+        newItem.innerText = searchHistory[i];
+        newList.append(newItem);
+    
+        // add a click event listener to each history item
+        newItem.addEventListener('click', function () {
+            searchCity(null, searchHistory[i]);
+        });
+    }
+    
+    historyContainer.append(newList);
+     
 
-
-
-newItem.innerText = historyBtn[0]
-console.log (searchHistory)
-for (let i = 0; i < searchHistory.length; i++) {
-    let newItem = document.createElement("li");
-    newItem.innerText = searchHistory[i];
-    newList.append(newItem);
-
-    // add a click event listener to each history item
-    newItem.addEventListener('click', function () {
-        searchCity(null,searchHistory[i]);
-    });
 }
 
-historyContainer.append(newList);
+function getHistory(){
+    var storedHistory = localStorage.getItem("searchHistory")
+    if (storedHistory){
+        searchHistory = JSON.parse(storedHistory)
+
+    }
+    displayHistory()
+}
+// newItem.innerText = historyBtn[0]
+// console.log(searchHistory)
 
 
 
@@ -138,7 +150,7 @@ function displayCurrent(current, city) {
     var iconDescription = current.weather[0].main
     var iconUrl = `https:openweathermap.org/img/w/${current.weather[0].icon}.png`
     // var cpressure = data.main.pressure
-    var date = current.dt_txt
+    // var date = current.dt_txt
 
 
 
@@ -213,7 +225,7 @@ function displayForecast(forecast, city) {
         var iconDescription = current.weather[0].main
         var iconUrl = `https:openweathermap.org/img/w/${current.weather[0].icon}.png`
         // var cpressure = data.main.pressure
-        var date = current.dt_txt
+        // var date = current.dt_txt
 
         //     // Select the main card text element by id
         //     // We will set the id 'main-card-text' in index.html
@@ -259,21 +271,6 @@ function displayForecast(forecast, city) {
         //combine data w/card - build
         cardBody.append(cardTitle, cardTextTemp, cardTextFeelslike, cardTextHumidity, cardTextWind)
         forecastContainer.append(card)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
 
