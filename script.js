@@ -2,18 +2,7 @@
 // var geoapi=`http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=${weatherApiKey}`
 let weatherApiKey = '08c3565d78414f9134bafaeed4808aa7';
 https://api.openweathermap.org/data/2.5/forecast?q=London,uk&APPID=08c3565d78414f9134bafaeed4808aa7
-// fetch()
-// 		.then(function (response) {
-// 			return response.json();
-// 		})
-// 		.then(function (data) {
 
-
-// 			fetchWeather(data);
-// 		})
-// 		.catch(function (error) {
-// 			alert('please enter a valid city name');
-// 		});
 
 var searchForm = document.getElementById("search-form")
 var searchInput = $("#search-input")
@@ -151,7 +140,7 @@ function displayCurrent(current, city) {
     // var icon = current.weather[0].icon
     var iconDescription = current.weather[0].main
     var iconUrl = `https:openweathermap.org/img/w/${current.weather[0].icon}.png`
-    // var cpressure = data.main.pressure
+    
     // var date = current.dt_txt
 
 
@@ -281,7 +270,9 @@ function displayForecast(forecast, city) {
 
 }
 
-historyContainer.addEventListener("click",function);
+historyContainer.addEventListener("click",function(event){
+console.log (event.target)
+})
 
 
 displayHistory()
