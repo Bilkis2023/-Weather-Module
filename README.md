@@ -11,7 +11,7 @@
 <br>
 For someone with IT skils, developing a weather forecast website could be a <br>
  great way to showcase abilities in web design and possibly incorporate <br>
- digital marketing strategies to atract users. It can offer various benefits <br>
+ digital marketing strategies to attract users. It can offer various benefits <br>
   both for users and developers. Here are some key advantages:
   <br>
    <br>
